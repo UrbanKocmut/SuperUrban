@@ -2,14 +2,15 @@
 var canvas;
 var timer = {
     time: 0,
-    x: 350,
+    x: 320,
     y: 10,
     set: function () {
         timer.time = performance.now();
     },
     draw: function () {
         var diff = performance.now() - timer.time;
-        canvas.fillText(String(diff), timer.x, timer.y);
+        canvas.fillText("FrameTime: "+String(diff), timer.x, timer.y);
+        canvas.fillText("FPS: "+String(Math.floor((1/diff)*1000)), timer.x, timer.y+10);
     }
 };
 var box = {
